@@ -21,6 +21,9 @@ export default class Header extends Component {
               <Link to="/accounts"> Accounts </Link>
             </Navbar.Brand>
             <Navbar.Brand>
+              <Link to="/operations"> Account Operations </Link>
+            </Navbar.Brand>
+            <Navbar.Brand>
               <Link to="/bank-details"> Bank </Link>
             </Navbar.Brand>
             <Navbar.Brand>

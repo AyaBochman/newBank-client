@@ -10,6 +10,8 @@ import BankDetails from "./components/bank-details/bank-details";
 import addAccount from "./components/account/add-account";
 import Header from "./components/header/header";
 import Account from "./components/account/account";
+import accountOperation from "./components/operations/operations"
+
 class App extends Component {
   componentDidMount() {
     console.log("app loaded!!!");
@@ -22,7 +24,8 @@ class App extends Component {
           <div />
           <div>
             <Switch>
-              <Route key="accounts" path="/accounts" component={AccountsPage} />
+              <Route key="accounts" exact path="/accounts" component={AccountsPage} />
+              <Route key="operations" path="/operations" component={accountOperation} />
               <Route
                 key="bank-details"
                 path="/bank-details"
@@ -39,7 +42,7 @@ class App extends Component {
                 path="/account/:id"
                 component={Account}
               />
-              <Redirect from="/" to="/account" />
+              {/* <Redirect from="/" to="/accounts" /> */}
             </Switch>
           </div>
         </div>

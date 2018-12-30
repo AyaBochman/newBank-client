@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-
+import { BrowserRouter, Link, Switch, Route, Redirect } from "react-router-dom";
+import accountActivities from './account-activities'
 import { withStyles } from "@material-ui/core/styles";
 
 const styles = {
@@ -33,7 +34,7 @@ class Account extends Component {
   }
 
   componentDidMount() {
-    fetch(`http://10.103.50.39:2200/accounts/${this.state.id}`)
+    fetch(`http://localhost:2200/accounts/${this.state.id}`)
       .then(result => {
         return result.json();
       })
@@ -52,7 +53,25 @@ class Account extends Component {
   render() {
     const { classes } = this.props;
     return (
+
+    
       <div className="container">
+        <div>
+          {/* <Link to={`/account/${this.state.id}/activities`}> Account Activities </Link> */}
+        </div>
+        <div>
+          {/* <Route
+            key="activities"
+            path={`${this.state.id}/activities`}
+            component={accountActivities}
+          /> */}
+              {/* <Route
+                key="account"
+                exact={true}
+                path="/account/:id/activities"
+                component={accountActivities}
+              /> */}
+        </div>
         <div className="row">
           <button onClick={this.goBack} className="btn btn-primary">
             {" "}
@@ -66,6 +85,13 @@ class Account extends Component {
             )}
             {!this.state.account && <div>loading...</div>}
           </h2>
+        </div>
+        <div class="row">
+        {/* activities here */}
+        <h3>account {this.state.id} activities</h3>
+
+
+
         </div>
         <br />
         <a href={this.state.download}>download log file </a>

@@ -42,7 +42,7 @@ class AccountsPage extends Component {
 
   getAccounts() {
     fetch(
-      `http://10.103.50.39:2200/accounts/${this.state.skip}/${this.state.take}`
+      `http://localhost:2200/accounts/${this.state.skip}/${this.state.take}`
     )
       .then(result => {
         return result.json();
